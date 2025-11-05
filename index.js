@@ -8,7 +8,13 @@ const booksRouter = require('./routes/books');
 const issuesRouter = require('./routes/issues');
 
 const app = express();
-app.use(cors());
+
+// ✅ Configure CORS for your deployed frontend
+app.use(cors({
+  origin: "https://lib-w2rm.onrender.com", 
+  credentials: true,
+}));
+
 app.use(bodyParser.json());
 
 // ------------------------
